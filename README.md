@@ -1,20 +1,28 @@
-html, body {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
+# CSS Grid
 
+## Create a Grid
+
+```css
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
+    grid-template-columns: 1fr 1fr; /* defines two columns */
+}
+```
+
+## Create Grid Areas
+
+```css
+  grid-template-areas: 
     "title title"
     "header header"
     "sidebar sidebar"
     "content content"
     "footer footer";
-    grid-gap: 10px;
-}
+```
 
+## Assign classes to grid areas
+
+```css
 .title {
     grid-area: title;
 }
@@ -31,19 +39,14 @@ html, body {
     grid-area: content;
 }
 
-
 .footer {
     grid-area: footer;
 }
+```
 
-.grid div:nth-child(even){
-    background-color: lightcoral;
-}
+## Create a grid style for desktop
 
-.grid div:nth-child(odd){
-    background-color: lightseagreen;
-}
-
+```css
 @media screen and (min-width: 736px) {
     .grid {
         display: grid;
@@ -55,5 +58,9 @@ html, body {
         ". sidebar content ."
         ". footer footer .";
     }
-    
 }
+```
+
+## Screen Capture
+
+![](screencapture.png)
